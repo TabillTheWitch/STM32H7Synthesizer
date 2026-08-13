@@ -1,0 +1,19 @@
+# Build directories
+**/Debug/
+**/Release/
+
+# Build artifacts
+*.elf
+*.map
+*.lst
+*.o
+*.d
+
+# CubeIDE metadata (may contain absolute paths)
+**/.settings/
+*.launch
+*.mxproject
+
+# Optional: ignore user-specific workspace files
+*.cproject
+*.project
