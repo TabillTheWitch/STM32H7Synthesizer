@@ -1,0 +1,104 @@
+<mxfile host="Electron">
+  <diagram name="ページ-1" id="gSdZwnAE3R5k-HgAatmB">
+    <mxGraphModel dx="2054" dy="1201" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hLNv4pSg1UrJfsxJvY6v-1" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="I2SDmaBufferStorage" vertex="1">
+          <mxGeometry height="720" width="150" x="420" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="48PuTUEduGeiGPI-k-kZ-2" parent="hLNv4pSg1UrJfsxJvY6v-1" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};container=0;" value="" vertex="1">
+          <mxGeometry height="40" width="10" x="80" y="260.0499999999997" as="geometry" />
+        </mxCell>
+        <mxCell id="48PuTUEduGeiGPI-k-kZ-3" edge="1" parent="hLNv4pSg1UrJfsxJvY6v-1" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;exitX=0.6;exitY=0.135;exitDx=0;exitDy=0;exitPerimeter=0;" target="48PuTUEduGeiGPI-k-kZ-2" value="updateWritableBuffer(Phase::Half)">
+          <mxGeometry relative="1" x="-0.002" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="119.04999999999995" y="240.04999999999973" />
+              <mxPoint x="119.04999999999995" y="270.0499999999997" />
+            </Array>
+            <mxPoint x="80" y="240" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="48PuTUEduGeiGPI-k-kZ-6" parent="hLNv4pSg1UrJfsxJvY6v-1" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};container=0;" value="" vertex="1">
+          <mxGeometry height="40" width="10" x="80" y="550.0499999999997" as="geometry" />
+        </mxCell>
+        <mxCell id="48PuTUEduGeiGPI-k-kZ-7" edge="1" parent="hLNv4pSg1UrJfsxJvY6v-1" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;exitX=0.6;exitY=0.135;exitDx=0;exitDy=0;exitPerimeter=0;" target="48PuTUEduGeiGPI-k-kZ-6" value="updateWritableBuffer(Phase::Full)">
+          <mxGeometry relative="1" x="-0.002" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="119.04999999999995" y="530.0499999999997" />
+              <mxPoint x="119.04999999999995" y="560.0499999999997" />
+            </Array>
+            <mxPoint x="80" y="530" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JNGUZ-yRtQd5w5bdhh-u-1" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;container=0;" value="" vertex="1">
+          <mxGeometry height="600" width="10" x="490" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="5Ieh-U-mJDpZgJw4rCc--2" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="&lt;span style=&quot;font-family: Verdana;&quot;&gt;I2SInterruptHandler&amp;nbsp;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="720" width="174" x="130" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hLNv4pSg1UrJfsxJvY6v-6" parent="5Ieh-U-mJDpZgJw4rCc--2" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};container=0;" value="" vertex="1">
+          <mxGeometry height="40" width="10" x="92" y="430.0499999999997" as="geometry" />
+        </mxCell>
+        <mxCell id="hLNv4pSg1UrJfsxJvY6v-7" edge="1" parent="5Ieh-U-mJDpZgJw4rCc--2" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;exitX=0.6;exitY=0.135;exitDx=0;exitDy=0;exitPerimeter=0;" target="hLNv4pSg1UrJfsxJvY6v-6" value="HAL_I2S_TxCpltCallback">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="131.05" y="410.0499999999997" />
+              <mxPoint x="131.05" y="440.0499999999997" />
+            </Array>
+            <mxPoint x="92" y="410" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C5QvliBy4vk0CsI_MDW7-9" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;exitX=1.3;exitY=0.7;exitDx=0;exitDy=0;exitPerimeter=0;" target="hLNv4pSg1UrJfsxJvY6v-1" value="onHalfTransfer()">
+          <mxGeometry relative="1" width="80" x="0.0043" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="225" y="300" as="sourcePoint" />
+            <mxPoint x="460" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="62H9uMR-NTYlHvmMGgG3-2" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;container=0;" value="" vertex="1">
+          <mxGeometry height="590" width="10" x="212" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="C5QvliBy4vk0CsI_MDW7-7" parent="1" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};container=0;" value="" vertex="1">
+          <mxGeometry height="40" width="10" x="222" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="C5QvliBy4vk0CsI_MDW7-8" edge="1" parent="1" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;exitX=0.6;exitY=0.135;exitDx=0;exitDy=0;exitPerimeter=0;" target="C5QvliBy4vk0CsI_MDW7-7" value="HAL_I2S_TxHalfCpltCallback">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="261.05" y="200" />
+              <mxPoint x="261.05" y="230" />
+            </Array>
+            <mxPoint x="222" y="199.95000000000027" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hLNv4pSg1UrJfsxJvY6v-5" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" value="return">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="490" y="400" as="sourcePoint" />
+            <mxPoint x="215.5" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="48PuTUEduGeiGPI-k-kZ-1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="AudioBufferの半分までI2S出力した後に実行されるハンドラ関数" vertex="1">
+          <mxGeometry height="40" width="210" x="232" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="48PuTUEduGeiGPI-k-kZ-4" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="AudioBufferの末尾までI2S出力した後に実行されるハンドラ関数" vertex="1">
+          <mxGeometry height="40" width="210" x="222" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="48PuTUEduGeiGPI-k-kZ-5" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;exitX=1.3;exitY=0.7;exitDx=0;exitDy=0;exitPerimeter=0;" value="onFullTransfer()">
+          <mxGeometry relative="1" width="80" x="0.0043" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="220" y="584" as="sourcePoint" />
+            <mxPoint x="490" y="584" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="48PuTUEduGeiGPI-k-kZ-8" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" value="return">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="496.5" y="690" as="sourcePoint" />
+            <mxPoint x="222" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
