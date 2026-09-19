@@ -10,6 +10,7 @@ namespace Domain::Service
 	float WaveOutputService::execute()
 	{
 		float sound = 0.f;
+		float totaEnvLevel = 0.f;
 
 		// エンベロープの更新
 		if (isADSRUpdateCounter == ADSRUpdateCycle)
@@ -30,11 +31,17 @@ namespace Domain::Service
 
 			// WaveTableから音を生成する。
 			const float envLevel = m_notePool.getCurrentLevelByItNo(itNo) * m_notePool.getVelocityByItNo(itNo);
+			totaEnvLevel += envLevel;
 
 			sound += m_waveTable.get(
 					m_notePool.getPhaseByItNo(itNo),
 					m_notePool.getFreqByItNo(itNo),
 					m_notePool.getTableIdxByItNo(itNo)) * envLevel;
+		}
+
+		if (totaEnvLevel > 0.f)
+		{
+			sound /= totaEnvLevel;
 		}
 
 		return Core::softClip(sound);
