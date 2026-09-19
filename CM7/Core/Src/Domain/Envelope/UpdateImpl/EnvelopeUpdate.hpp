@@ -10,7 +10,8 @@ using namespace Domain::ADSR;
 // エンベロープ状態遷移処理の詳細
 namespace Domain::Envelope::UpdateImpl
 {
-    inline void updateAttack(EnvelopeStatePod& envelope, const ADSRParamPod& adsr, float dt)
+	__attribute__((section(".itcm"), noinline))
+    void updateAttack(EnvelopeStatePod& envelope, const ADSRParamPod& adsr, float dt)
     {
         if (adsr.m_attackTime <= 0.0f)
         {
@@ -33,7 +34,8 @@ namespace Domain::Envelope::UpdateImpl
         }
     }
 
-    inline void updateDecay(EnvelopeStatePod& envelope, const ADSRParamPod& adsr, float dt)
+	__attribute__((section(".itcm"), noinline))
+	void updateDecay(EnvelopeStatePod& envelope, const ADSRParamPod& adsr, float dt)
     {
 
         if (adsr.m_decayTime <= 0.0f)
@@ -57,7 +59,8 @@ namespace Domain::Envelope::UpdateImpl
         }
     }
 
-    inline void updateSustain(EnvelopeStatePod& envelope, const ADSRParamPod& adsr, float dt)
+	__attribute__((section(".itcm"), noinline))
+	void updateSustain(EnvelopeStatePod& envelope, const ADSRParamPod& adsr, float dt)
     {
         if (adsr.m_sustainResetTime <= 0.0f)
         {
@@ -81,9 +84,11 @@ namespace Domain::Envelope::UpdateImpl
         }
     }
 
-    inline void updateSustained(EnvelopeStatePod& , const ADSRParamPod& , float ){}
+	__attribute__((section(".itcm"), noinline))
+	void updateSustained(EnvelopeStatePod& , const ADSRParamPod& , float ){}
 
-    inline void updateRelease(EnvelopeStatePod& envelope, const ADSRParamPod& adsr, float dt)
+	__attribute__((section(".itcm"), noinline))
+	void updateRelease(EnvelopeStatePod& envelope, const ADSRParamPod& adsr, float dt)
     {
         if (adsr.m_releaseTime <= 0.0f)
         {
@@ -107,5 +112,6 @@ namespace Domain::Envelope::UpdateImpl
         }
     }
 
-    inline void updateReleased(EnvelopeStatePod& , const ADSRParamPod& , float ){}
+	__attribute__((section(".itcm"), noinline))
+	void updateReleased(EnvelopeStatePod& , const ADSRParamPod& , float ){}
 }

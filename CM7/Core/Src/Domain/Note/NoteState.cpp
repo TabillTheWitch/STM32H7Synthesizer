@@ -6,6 +6,7 @@ namespace Domain::Note
 {
 	NoteState::NoteState(NoteStatePod& notestate):m_noteState(&notestate){}
 
+	__attribute__((section(".itcm"), noinline))
 	bool NoteState::isReleased() const
 	{
 
@@ -21,7 +22,7 @@ namespace Domain::Note
 	{
 		m_noteState->m_channel = noteon.m_channel;
 		m_noteState->m_noteKey = noteon.m_noteKey;
-		m_noteState->m_velocity = noteon.m_velocity;
+		m_noteState->m_velocity = noteon.m_velocity / 127.0f;
 		m_noteState->m_freq = NoteKeyToFrequency(noteon.m_noteKey);
 		m_noteState->m_tableIdxCache = tableIdx;
 		m_noteState->m_envelope.m_state = E_EnvelopeState::Attack;
@@ -30,6 +31,7 @@ namespace Domain::Note
 		m_noteState->m_envelope.m_prevStateLevel = 0;
 	}
 
+	__attribute__((section(".itcm"), noinline))
 	void NoteState::update(const ADSRParamPod& adsr, float dt)
 	{
 		m_envelopeStateMachine.update(m_noteState->m_envelope,adsr, dt);
@@ -40,6 +42,7 @@ namespace Domain::Note
 		m_envelopeStateMachine.noteOff(m_noteState->m_envelope);
 	}
 
+	__attribute__((section(".itcm"), noinline))
 	void NoteState::advancePhase(float phaseDelta)
 	{
 		m_noteState->m_phase += phaseDelta * m_noteState->m_freq * Core::TwoPi;

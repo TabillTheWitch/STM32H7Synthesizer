@@ -24,6 +24,7 @@ namespace Domain::Pool
 		}
 	}
 
+	__attribute__((section(".itcm"), noinline))
 	void NoteStatePool::update(const ADSRParamPod& adsr, float dt)
 	{
 		for (Slot& slot : m_slots)
@@ -51,11 +52,13 @@ namespace Domain::Pool
 		}
 	}
 
+	__attribute__((section(".itcm"), noinline))
 	bool NoteStatePool::isActive(uint16_t no) const
 	{
 		return *m_slots[no].active;
 	}
 
+	__attribute__((section(".itcm"), noinline))
 	void NoteStatePool::advancePhaseByItNo(uint16_t no,float phaseDelta)
 	{
 		m_slots[no].note.advancePhase(phaseDelta);

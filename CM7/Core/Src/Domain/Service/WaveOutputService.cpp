@@ -10,6 +10,7 @@ namespace Domain::Service
 	float WaveOutputService::execute()
 	{
 		float sound = 0.f;
+		uint16_t active = 0;
 		// エンベロープの更新
 		if (isADSRUpdateCounter == ADSRUpdateCycle)
 		{
@@ -24,6 +25,7 @@ namespace Domain::Service
 		for (uint16_t itNo = 0; itNo < Domain::Config::MAX_POLY; ++itNo)
 		{
 			if (!m_notePool.isActive(itNo)) continue;
+			active++;
 
 			m_notePool.advancePhaseByItNo(itNo, DeltaT);
 
@@ -34,6 +36,11 @@ namespace Domain::Service
 					m_notePool.getPhaseByItNo(itNo),
 					m_notePool.getFreqByItNo(itNo),
 					m_notePool.getTableIdxByItNo(itNo)) * envLevel;
+		}
+
+		if (active > 0)
+		{
+			sound /= active;
 		}
 
 		return Core::softClip(sound);

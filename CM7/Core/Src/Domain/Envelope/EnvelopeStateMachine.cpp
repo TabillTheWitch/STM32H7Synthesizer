@@ -23,6 +23,7 @@ namespace Domain::Envelope
 		envelope.m_state = state;
 	}
 
+	__attribute__((section(".itcm"), noinline))
 	void EnvelopeStateMachine::update(EnvelopeStatePod& envelope,const ADSRParamPod& adsr, float dt)
 	{
 		switch (envelope.m_state)
@@ -36,11 +37,13 @@ namespace Domain::Envelope
 		}
 	}
 
+	__attribute__((section(".itcm"), noinline))
 	bool EnvelopeStateMachine::isReleased(EnvelopeStatePod& envelope) const
 	{
 		return envelope.m_state == E_EnvelopeState::Released;
 	}
 
+	__attribute__((section(".itcm"), noinline))
 	bool EnvelopeStateMachine::isRelease(EnvelopeStatePod& envelope) const
 	{
 		return envelope.m_state == E_EnvelopeState::Release;

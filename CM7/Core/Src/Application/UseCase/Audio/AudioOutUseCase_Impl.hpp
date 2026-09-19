@@ -15,7 +15,7 @@ namespace Application::UseCase::Audio
 
 	    for (size_t i = 0;i < frame.size();i++)
 	    {
-	    	frame[i] = static_cast<uint16_t>(m_WaveOutputService.execute() * 0x7fff);
+	    	frame[i] = static_cast<int16_t>(m_WaveOutputService.execute() * 0x7fff);
 	    }
 	    m_AudioBufferAccess.commitFrame();
 	}
