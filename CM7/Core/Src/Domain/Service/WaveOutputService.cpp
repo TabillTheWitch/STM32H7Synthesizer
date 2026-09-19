@@ -39,7 +39,7 @@ namespace Domain::Service
 					m_notePool.getTableIdxByItNo(itNo)) * envLevel;
 		}
 
-		if (totaEnvLevel > 0.f)
+		if (totaEnvLevel > 1.f)
 		{
 			sound /= totaEnvLevel;
 		}
