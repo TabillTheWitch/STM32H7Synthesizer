@@ -12,7 +12,7 @@ WaveTableSynthesizerはリアルタイムでMIdi信号を受信し、発音す�
 ## シンセサイザー機能
 ### WaveTableによる発音
 - WaveTable数：1
-- 同時発音数：8
+- 同時発音数：10
 
 ### MIDI受信
 - Midiチャンネル数：1
@@ -53,7 +53,7 @@ WaveTableSynthesizerはリアルタイムでMIdi信号を受信し、発音す�
 - エフェクト機能追加
 
 ## デモ動画
-https://www.youtube.com/watch?v=QtdqTNvqx4g
+https://www.youtube.com/watch?v=BU0BlnTGzCk
 
 ## ライセンス
 MIT License
