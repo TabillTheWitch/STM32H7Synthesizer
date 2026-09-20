@@ -4,19 +4,23 @@
 namespace Domain::Service
 {
 	WaveOutputService::WaveOutputService(NoteStatePool& notepool, BandLimitedWaveTables& waveTable, ADSRParamPod& adsr)
-					:m_notePool(notepool), m_waveTable(waveTable), m_adsr(adsr){isADSRUpdateCounter = 0;}
+					:m_notePool(notepool), m_waveTable(waveTable), m_adsr(adsr)
+	{
+		isADSRUpdateCounter = 1;
+		m_gain = 1.f;
+	}
 
 	__attribute__((section(".itcm"), noinline))
 	float WaveOutputService::execute()
 	{
 		float sound = 0.f;
-		float totaEnvLevel = 0.f;
+		float totalEnvLevel = 0.f;
 
 		// エンベロープの更新
 		if (isADSRUpdateCounter == ADSRUpdateCycle)
 		{
 			m_notePool.update(m_adsr, ADSRUpdateDeltaT);
-			isADSRUpdateCounter = 0;
+			isADSRUpdateCounter = 1;
 		}
 		else
 		{
@@ -31,7 +35,7 @@ namespace Domain::Service
 
 			// WaveTableから音を生成する。
 			const float envLevel = m_notePool.getCurrentLevelByItNo(itNo) * m_notePool.getVelocityByItNo(itNo);
-			totaEnvLevel += envLevel;
+			totalEnvLevel += envLevel;
 
 			sound += m_waveTable.get(
 					m_notePool.getPhaseByItNo(itNo),
@@ -39,10 +43,12 @@ namespace Domain::Service
 					m_notePool.getTableIdxByItNo(itNo)) * envLevel;
 		}
 
-		if (totaEnvLevel > 1.f)
-		{
-			sound /= totaEnvLevel;
-		}
+		float targetGain = (totalEnvLevel > 0.f)
+		    ? 1.f / sqrtf(totalEnvLevel)
+		    : 1.f;
+
+		m_gain += (targetGain - m_gain) * 0.01f;
+		sound *= m_gain;
 
 		return Core::softClip(sound);
 	}

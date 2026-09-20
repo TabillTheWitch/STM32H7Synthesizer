@@ -26,9 +26,9 @@ namespace Domain::Note
 		m_noteState->m_freq = NoteKeyToFrequency(noteon.m_noteKey);
 		m_noteState->m_tableIdxCache = tableIdx;
 		m_noteState->m_envelope.m_state = E_EnvelopeState::Attack;
-		m_noteState->m_envelope.m_currentLevel = 0;
-		m_noteState->m_envelope.m_elapsed = 0;
-		m_noteState->m_envelope.m_prevStateLevel = 0;
+		m_noteState->m_envelope.m_currentLevel = 1e-5f;
+		m_noteState->m_envelope.m_elapsed = 0.f;
+		m_noteState->m_envelope.m_prevStateLevel = 0.f;
 	}
 
 	__attribute__((section(".itcm"), noinline))
@@ -37,6 +37,7 @@ namespace Domain::Note
 		m_envelopeStateMachine.update(m_noteState->m_envelope,adsr, dt);
 	}
 
+	__attribute__((section(".itcm"), noinline))
 	void NoteState::noteoff()
 	{
 		m_envelopeStateMachine.noteOff(m_noteState->m_envelope);

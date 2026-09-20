@@ -38,6 +38,7 @@ namespace Domain::Pool
 		}
 	}
 
+	__attribute__((section(".itcm"), noinline))
 	void NoteStatePool::noteoff(NoteOffEventPod noteoff)
 	{
 		for (Slot& slot : m_slots)

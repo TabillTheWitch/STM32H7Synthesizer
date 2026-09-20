@@ -23,5 +23,6 @@ namespace Domain::Service
 		BandLimitedWaveTables& m_waveTable;
 		ADSRParamPod& m_adsr;
 		uint8_t isADSRUpdateCounter;
+		float m_gain;
 	};
 }

@@ -4,8 +4,10 @@ using namespace Domain::Envelope::UpdateImpl;
 
 namespace Domain::Envelope
 {
+	__attribute__((section(".itcm"), noinline))
 	EnvelopeStateMachine::EnvelopeStateMachine(){};
 
+	__attribute__((section(".itcm"), noinline))
 	void EnvelopeStateMachine::noteOff(EnvelopeStatePod& envelope)
 	{
 		if (!isRelease(envelope) && !isReleased(envelope))
@@ -16,6 +18,7 @@ namespace Domain::Envelope
 		}
 	}
 
+	__attribute__((section(".itcm"), noinline))
 	void EnvelopeStateMachine::reset(EnvelopeStatePod& envelope,E_EnvelopeState state)
 	{
 		envelope.m_prevStateLevel = envelope.m_currentLevel;
