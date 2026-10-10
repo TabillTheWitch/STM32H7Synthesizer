@@ -53,7 +53,9 @@ WaveTableSynthesizerはリアルタイムでMIdi信号を受信し、発音す�
 - エフェクト機能追加
 
 ## デモ動画
+https://www.youtube.com/watch?v=bL2lHX9xDEo
 https://www.youtube.com/watch?v=BU0BlnTGzCk
+
 
 ## ライセンス
 MIT License
