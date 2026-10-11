@@ -11,11 +11,10 @@ WaveTableSynthesizerはリアルタイムでMIdi信号を受信し、発音す�
 
 ## シンセサイザー機能
 ### WaveTableによる発音
-- WaveTable数：1
-- 同時発音数：10
+- BandLimitedWaveTable対応
 
 ### MIDI受信
-- Midiチャンネル数：1
+- MIDI受信対応
 
 ### その他
 - ADSRによる音量制御 
