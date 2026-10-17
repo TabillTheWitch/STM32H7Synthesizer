@@ -34,6 +34,10 @@ WaveTableSynthesizerはリアルタイムでMIdi信号を受信し、発音す�
 1.STM32CubeIDEでプロジェクトをインポート  
 2.Build→Flash
 
+## ドキュメント資料について
+シーケンス図はDrow.ioにて作成しています。
+https://www.drawio.com/
+
 ## 参考にさせて頂いたサイトやリポジトリ
 - ソフトウェアシンセサイザーを作る  
  https://qiita.com/agehama_/items/7da430491400e9a2b6a7
